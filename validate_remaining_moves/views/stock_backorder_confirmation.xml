@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Giacomo Grasso, Gabriele Baldessari
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="stock_backorder_confirmation_form_view">
+        <field name="name">stock.backorder.confirmation.form (in validate_remaining_moves)</field>
+        <field name="model">stock.backorder.confirmation</field>
+        <field name="inherit_id" ref="stock.view_backorder_confirmation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <group>
+                    <p>
+                        Validate remaining and backorder
+                        Validate remaining w/o backorder
+                    </p>
+                </group>
+            </xpath>
+            <button name="process_cancel_backorder" position="after">
+                <button name="validate_remaining_and_backorder" string="Validate remaining and backorder" type="object" class="oe_highlight"/>
+                <button name="validate_remaning_no_backorder" string="Validate remaining w/o backorder" type="object" class="oe_highlight"/>
+            </button>
+        </field>
+    </record>
+
+
+
+</odoo>
